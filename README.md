@@ -10,7 +10,7 @@ ML4MILP is the first benchmark dataset specifically designed to test ML-based al
 
 We have meticulously assembled a substantial collection of mixed integer linear programming (MILP) instances from a variety of sources, including open-source, comprehensive datasets, domain-specific academic papers and competitions related to MILP.  Additionally, we generated a substantial number of standard problem instances based on four canonical MILP problems: the Maximum Independent Set (MIS) problem, the Minimum Vertex Covering (MVC) problem,  and the Set Covering (SC) problem. For each type of problem, we generated instances at three levels of difficulty—easy, medium, and hard.
 
-The sizes of each categorized datasets are as follows, and the download links are detailed in './Benchmark Datasets/README.md'.
+The sizes of each categorized datasets are as follows, and the download links are detailed in `./Benchmark Datasets/README.md`.
 
 | Name(Path)                     | Number of Instances | Avg.Vars | Avg.Constrains |
 | ------------------------------ | ------------------- | -------- | -------------- |
@@ -70,3 +70,118 @@ To validate the effectiveness of the proposed dataset, we organized the existing
 | GNN&GBDT-Guided Fast Optimizing Framework                  | [Link](https://github.com/thuiar/GNN-GBDT-Guided-Fast-Optimizing-Framework.git) |
 
 ### Similarity Evaluation
+
+#### Similarity Evaluation Metrics
+
+##### Structure Embedding
+
+The codes are shown in `./Similarity Evaluation/Similarity/Structure Similarity`. The following bash command can be run to calculate the structural embedding similarity of a given dataset containing several instances of MILP in `.lp` format.
+
+```bash
+base_dir="<The dataset folder>"
+
+# Traverse all subfolders under _latest_datasets
+find "$base_dir" -type d -name LP | while read lp_dir; do
+		# Get the directory where the LP is located, i.e. the instance directory
+    instance_dir=$(dirname "$lp_dir")  
+    # Get the question name
+    problem_name=$(basename "$instance_dir")
+
+    echo "Processing problem: $problem_name, directory: $instance_dir"
+
+    # Create the Test0 folder in the instance directory
+    mkdir -p "$instance_dir/Test0"
+
+    # Run MILP_utils.py
+    python MILP_utils.py --mode=model2data \
+        --input_dir="$lp_dir" \
+        --output_dir="$instance_dir/Test0" \
+        --type=direct
+
+    # Run graph_statistics.py
+    python graph_statistics.py --input_dir="$instance_dir/Test0" \
+        --output_file="$instance_dir/statistics"
+
+    # Run calc_sim.py and output the results
+    python calc_sim.py  --input_file1="$instance_dir/statistics" > "$instance_dir/result.txt"
+done
+```
+
+##### Neural Embedding
+
+The codes are shown in `./Similarity Evaluation/Similarity/Neural Embedding Similarity`. The following bash command can be run to calculate the neural embedding similarity of a given dataset containing several instances of MILP in `.lp` format.
+
+```bash
+
+special_dir="<Your Dataset Folder>"
+
+
+find "$special_dir" -type d -name LP | while read lp_dir; do
+    process_instance "$lp_dir"
+done
+
+process_instance() {
+    lp_dir=$1
+    instance_dir=$(dirname "$lp_dir")  # 获取 LP 所在的目录，即实例目录
+    problem_name=$(basename "$instance_dir")  # 获取问题名
+
+    echo "处理问题：$problem_name，目录：$instance_dir"
+    
+    # Create the Test0 folder in the instance directory
+    mkdir -p "$instance_dir/Test0"
+
+    # Run MILP_utils.py
+    python MILP_utils.py --mode=model2data \
+        --input_dir="$lp_dir" \
+        --output_dir="$instance_dir/Test0" \
+        --type=direct
+		
+		# Run inference.py to inference
+    python src/inference.py --dataset=MILP \
+    --cfg_path=./experiments/configs/test.yml \
+    --seed=1 \
+    --device=2 \
+    --model_path=./experiments/weights/encoder.pth \
+    --input_dir="$instance_dir/Test0" \
+    --output_file="$instance_dir/embedding" \
+    --filename="$instance_dir/namelist" || echo "Inference failed"
+
+    # Run calc_sim.py and output the results
+    python calc_sim.py  --input_file1="$instance_dir/embedding" > "$instance_dir/result_embedding.txt"
+}
+
+```
+
+#### Classification Algorithm
+
+The codes are shown in `./Similarity Evaluation/Classification`. The following bash command can be run to build, train, inference and cluster. For classification, we can use our trained model and just run build, inference and cluster in turn.
+
+```bash
+case $1 in
+  build|train|inference|cluster)
+    echo "Valid argument: $1"
+    ;;
+  *)
+    echo "Invalid argument: $1. Please enter correct choice."
+    exit 1
+    ;;
+esac
+
+
+if [ "$1" = "build" ]; then
+    python src/MILP_utils.py --mode=model2data --input_dir=dataset/model --output_dir=dataset/data --type=direct
+fi
+
+if [ "$1" = "train" ]; then
+    python src/train.py --dataset=MILP --cfg_path=experiments/configs/test.yml --seed=1 --device=0 --model_path=experiments/weights/encoder.pth --dataset_path=dataset/data || echo "Training failed"
+fi
+
+if [ "$1" = "inference" ]; then
+    python src/inference.py --cfg_path=experiments/configs/test.yml --seed=1 --device=0 --model_path=experiments/weights/encoder.pth --input_dir="<Your Dataset Folder>" --output_file=tmp.pkl --filename=namelist.pkl || echo "Inference failed"
+fi
+
+if [ "$1" = "cluster" ]; then
+    python src/clustering.py --filename=namelist.pkl --input_file=tmp.pkl
+fi
+```
+
