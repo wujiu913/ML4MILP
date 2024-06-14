@@ -1,8 +1,8 @@
-## ML4MILP
+## ML4MILP: A Benchmark Dataset for Machine Learning-based Mixed-Integer Linear Programming
 
 ### Overview
 
-ML4MILP is the first benchmark dataset specifically designed to test ML-based algorithms for solving MILP problems, consisting of three main components: Similarity Evaluation, Benchmark Datasets, and Baseline Library. Based on this structure, we conducted uniform training and testing of baseline algorithms, followed by a comprehensive evaluation and ranking of the results.
+**ML4MILP is the first benchmark dataset specifically designed to test ML-based algorithms for solving MILP problems**, consisting of three main components: Similarity Evaluation, Benchmark Datasets, and Baseline Library. Based on this structure, we conducted uniform training and testing of baseline algorithms, followed by a comprehensive evaluation and ranking of the results.
 
 ![Framework](./Picture/Framework.png)
 
