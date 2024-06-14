@@ -122,11 +122,13 @@ done
 
 process_instance() {
     lp_dir=$1
-    instance_dir=$(dirname "$lp_dir")  # 获取 LP 所在的目录，即实例目录
-    problem_name=$(basename "$instance_dir")  # 获取问题名
+    # Get the directory where the LP is located, i.e. the instance directory
+    instance_dir=$(dirname "$lp_dir")  
+    # Get the question name
+    problem_name=$(basename "$instance_dir") 
 
-    echo "处理问题：$problem_name，目录：$instance_dir"
-    
+    echo "Processing problem: $problem_name, directory: $instance_dir"
+
     # Create the Test0 folder in the instance directory
     mkdir -p "$instance_dir/Test0"
 
