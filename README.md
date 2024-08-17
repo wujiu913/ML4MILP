@@ -55,19 +55,30 @@ The sizes of each categorized datasets are as follows, and the download links ar
 | MIPlib                         | 50                  | 7719.98  | 6866.04        |
 | Nexp                           | 77                  | 9207.09  | 7977.14        |
 | Transportation                 | 32                  | 4871.5   | 2521.467       |
+| MIRPLIB_Original               | 72                  | 36312.2  | 180.0          |
+| MIRPLIB_Maritime_Group1        | 40                  | 13919.5  | 180.0          |
+| MIRPLIB_Maritime_Group2        | 40                  | 24639.8  | 180.0          |
+| MIRPLIB_Maritime_Group3        | 40                  | 24639.8  | 180.0          |
+| MIRPLIB_Maritime_Group4        | 20                  | 4343.0   | 180.0          |
+| MIRPLIB_Maritime_Group5        | 20                  | 48330.0  | 180.0          |
+| MIRPLIB_Maritime_Group6        | 20                  | 48330.0  | 180.0          |
 
 ### Baseline Library
 
 To validate the effectiveness of the proposed dataset, we organized the existing mainstream methods into a Baseline Library and conducted comparisons using Benchmark Datasets against these mainstream baselines. The algorithms in the Baseline Library are as follows. 
 
-| Baseline                                                   | Code                                                         |
-| ---------------------------------------------------------- | ------------------------------------------------------------ |
-| Gurobi                                                     | ./Baseline Library/Gurobi_the_benchmark.py                   |
-| SCIP                                                       | ./Baseline Library/SCIP_the_benchmark.py                     |
-| Large Neighborhood Searc                                   | ./Baseline Library/LNS_the_benchmark.py                      |
-| Adaptive Constraint Partition Based Optimization Framework | ./Baseline Library/ACP_the_benchmark.py                      |
-| Learn to Branch                                            | [Link](https://github.com/ds4dm/learn2branch-ecole.git)      |
-| GNN&GBDT-Guided Fast Optimizing Framework                  | [Link](https://github.com/thuiar/GNN-GBDT-Guided-Fast-Optimizing-Framework.git) |
+| Baseline                                                   | Code                                   |
+| ---------------------------------------------------------- | -------------------------------------- |
+| Gurobi                                                     | ./Baseline Library/Gurobi/             |
+| SCIP                                                       | ./Baseline Library/SCIP/               |
+| Large Neighborhood Searc                                   | ./Baseline Library/LNS/                |
+| Adaptive Constraint Partition Based Optimization Framework | ./Baseline Library/ACP/                |
+| Learn to Branch                                            | ./Baseline Library/Learn2Branch/       |
+| GNN&GBDT-Guided Fast Optimizing Framework                  | ./Baseline Library/GNN&GBDT/           |
+| GNN-Guided Predict-and-Search Framework                    | ./Baseline Library/Predict&Search      |
+| Neural Diving                                              | ./Baseline Library/Neural Diving       |
+| Hybrid Learn to Branch                                     | ./Baseline Library/Hybrid_Learn2Branch |
+| Graph Neural Networks with Random Feat                     | ./Baseline Library/GNN_MILP            |
 
 ### Similarity Evaluation
 

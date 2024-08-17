@@ -1,0 +1,12 @@
+Problem,learning-rate,max-epoch
+HEM_knapsack,0.003,200
+HEM_mis,0.003,200
+HEM_setcover,0.003,200
+vary_bounds_s1,0.003,200
+vary_matrix_s1,0.003,200
+vary_matrix_rhs_bounds_obj_s1,0.003,200
+vary_obj_s1,0.003,200
+vary_obj_s3,0.003,200
+vary_rhs_s2,0.003,200
+vary_rhs_s4,0.003,200
+vary_rhs_obj_s2,0.003,200

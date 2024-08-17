@@ -1,0 +1,12 @@
+﻿Problem,batch-size,learning-rate,num-epochs
+HEM_knapsack,1,0.0001,30
+HEM_mis,1,0.0001,30
+HEM_setcover,1,0.0001,30
+vary_bounds_s1,1,0.0001,30
+vary_matrix_s1,1,0.0001,30
+vary_matrix_rhs_bounds_obj_s1,1,0.0001,30
+vary_obj_s1,1,0.0001,30
+vary_obj_s3,1,0.0001,30
+vary_rhs_s2,1,0.0001,30
+vary_rhs_s4,1,0.0001,30
+vary_rhs_obj_s2,1,0.0001,30

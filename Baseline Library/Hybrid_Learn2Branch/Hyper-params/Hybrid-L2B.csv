@@ -1,0 +1,12 @@
+Problem,sample-rate,learning-rate,max-epoch,patience,early-stopping,epoch-size,batch-size,pretrain-batch-size,valid-batch-size
+HEM_knapsack,10,0.001,1000,10,20,312,32,128,128
+HEM_mis,10,0.001,1000,10,20,312,32,128,128
+HEM_setcover,10,0.001,1000,10,20,312,32,128,128
+vary_bounds_s1,10,0.001,1000,10,20,312,32,128,128
+vary_matrix_s1,10,0.001,1000,10,20,312,32,128,128
+vary_matrix_rhs_bounds_obj_s1,10,0.001,1000,10,20,312,32,128,128
+vary_obj_s1,10,0.001,1000,10,20,312,32,128,128
+vary_obj_s3,10,0.001,1000,10,20,312,32,128,
+vary_rhs_s2,10,0.001,1000,10,20,312,32,128,128
+vary_rhs_s4,10,0.001,1000,10,20,312,32,128,
+vary_rhs_obj_s2,10,0.001,1000,10,20,312,32,128,128
