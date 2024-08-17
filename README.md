@@ -73,16 +73,16 @@ The sizes of each categorized datasets are as follows, and the download links ar
 | MIPlib                         | 50                  | 7719.98  | 6866.04        |
 | Nexp                           | 77                  | 9207.09  | 7977.14        |
 | Transportation                 | 32                  | 4871.5   | 2521.467       |
-| MIPLIB_collection_easy         | 649                 | 119747.4 | 180.0          |
-| MIPLIB_collection_hard         | 107                 | 96181.4  | 180.0          |
-| MIPLIB_collection_open         | 204                 | 438355.9 | 180.0          |
-| MIRPLIB_Original               | 72                  | 36312.2  | 180.0          |
-| MIRPLIB_Maritime_Group1        | 40                  | 13919.5  | 180.0          |
-| MIRPLIB_Maritime_Group2        | 40                  | 24639.8  | 180.0          |
-| MIRPLIB_Maritime_Group3        | 40                  | 24639.8  | 180.0          |
-| MIRPLIB_Maritime_Group4        | 20                  | 4343.0   | 180.0          |
-| MIRPLIB_Maritime_Group5        | 20                  | 48330.0  | 180.0          |
-| MIRPLIB_Maritime_Group6        | 20                  | 48330.0  | 180.0          |
+| MIPLIB_collection_easy         | 649                 | 119747.4 | 123628.3       |
+| MIPLIB_collection_hard         | 107                 | 96181.4  | 101135.8       |
+| MIPLIB_collection_open         | 204                 | 438355.9 | 258599.5       |
+| MIRPLIB_Original               | 72                  | 36312.2  | 11485.8        |
+| MIRPLIB_Maritime_Group1        | 40                  | 13919.5  | 19329.25       |
+| MIRPLIB_Maritime_Group2        | 40                  | 24639.8  | 34053.25       |
+| MIRPLIB_Maritime_Group3        | 40                  | 24639.8  | 34057.75       |
+| MIRPLIB_Maritime_Group4        | 20                  | 4343.0   | 6336.0         |
+| MIRPLIB_Maritime_Group5        | 20                  | 48330.0  | 66812.0        |
+| MIRPLIB_Maritime_Group6        | 20                  | 48330.0  | 66815.0        |
 
 ### Baseline Library
 
