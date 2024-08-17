@@ -8,7 +8,7 @@
 
 ### Benchmark Datasets
 
-We have meticulously assembled a substantial collection of mixed integer linear programming (MILP) instances from a variety of sources, including open-source, comprehensive datasets, domain-specific academic papers and competitions related to MILP.  Additionally, we generated a substantial number of standard problem instances based on four canonical MILP problems: the Maximum Independent Set (MIS) problem, the Minimum Vertex Covering (MVC) problem,  and the Set Covering (SC) problem. For each type of problem, we generated instances at three levels of difficulty—easy, medium, and hard.
+We have meticulously assembled a substantial collection of mixed integer linear programming (MILP) instances from a variety of sources, including open-source, comprehensive datasets, domain-specific academic papers and competitions related to MILP.  Additionally, we generated a substantial number of standard problem instances based on four canonical MILP problems: the Maximum Independent Set (MIS) problem, the Minimum Vertex Covering (MVC) problem, the Set Covering (SC) problem, Balanced Item Placement (BIP) problem, Combinatorial Auctions (CAT) problem, Capacitated Facility Location (CFL) problem, Mixed Integer Knapsack Set (MIKS) problem, Middle-mile Consolidation Problem with Waiting Times (MMCW) problem and Steiner Network Problem with Coverage Constraints (SNPCC) problem. For each type of problem, we generated instances at three levels of difficulty—easy, medium, and hard.
 
 The sizes of each categorized datasets are as follows, and the download links are detailed in `./Benchmark Datasets/README.md`.
 
@@ -23,6 +23,24 @@ The sizes of each categorized datasets are as follows, and the download links ar
 | SC_easy                        | 50                  | 40000    | 40000          |
 | SC_medium                      | 50                  | 200000   | 200000         |
 | SC_hard                        | 50                  | 2000000  | 2000000        |
+| BIP_easy                       | 50                  | 4081     | 290            |
+| BIP_medium                     | 50                  | 14182    | 690            |
+| BIP_hard                       | 50                  | 54584    | 2090           |
+| CAT_easy                       | 50                  | 2000     | 2000           |
+| CAT_medium                     | 50                  | 22000    | 22000          |
+| CAT_hard                       | 50                  | 2000000  | 2000000        |
+| CFL_easy                       | 50                  | 16040    | 80             |
+| CFL_medium                     | 50                  | 144200   | 320            |
+| CFL_hard                       | 50                  | 656520   | 800            |
+| MIKS_easy                      | 50                  | 5000     | 5000           |
+| MIKS_medium                    | 50                  | 55000    | 55000          |
+| MIKS_hard                      | 50                  | 1000000  | 1000000        |
+| MMCW_easy                      | 50                  | 5760     | 2880           |
+| MMCW_medium                    | 50                  | 55260    | 27630          |
+| MMCW_hard                      | 50                  | 253980   | 126990         |
+| SNPCC_easy                     | 50                  | 3000     | 30             |
+| SNPCC_medium                   | 50                  | 15000    | 151            |
+| SNPCC_hard                     | 50                  | 240000   | 2405           |
 | nn\_verification               | 3622                | 7144.02  | 6533.58        |
 | item\_placement                | 10000               | 1083     | 195            |
 | load\_balancing                | 10000               | 61000    | 64307.19       |
@@ -55,6 +73,9 @@ The sizes of each categorized datasets are as follows, and the download links ar
 | MIPlib                         | 50                  | 7719.98  | 6866.04        |
 | Nexp                           | 77                  | 9207.09  | 7977.14        |
 | Transportation                 | 32                  | 4871.5   | 2521.467       |
+| MIPLIB_collection_easy         | 649                 | 119747.4 | 180.0          |
+| MIPLIB_collection_hard         | 107                 | 96181.4  | 180.0          |
+| MIPLIB_collection_open         | 204                 | 438355.9 | 180.0          |
 | MIRPLIB_Original               | 72                  | 36312.2  | 180.0          |
 | MIRPLIB_Maritime_Group1        | 40                  | 13919.5  | 180.0          |
 | MIRPLIB_Maritime_Group2        | 40                  | 24639.8  | 180.0          |
